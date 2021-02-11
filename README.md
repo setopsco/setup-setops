@@ -9,6 +9,8 @@ The `setopsco/setup-setops` action is a JavaScript action that sets up SetOps CL
 
 After you've used the action, subsequent steps in the same job can run arbitrary SetOps commands using [the GitHub Actions `run` syntax](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsrun). This allows most SetOps commands to work exactly like they do on your local command line.
 
+This action partly reuses code from https://github.com/hashicorp/setup-terraform.
+
 ## Usage
 
 This action can be run on `ubuntu-latest` GitHub Actions runners.
@@ -59,4 +61,6 @@ The action supports the following inputs:
 
 This action does not configure any outputs.
 
-Sets up SetOps CLI in your GitHub Actions workflow.
+## License
+
+[Mozilla Public License v2.0](https://github.com/setopsco/setup-setops/blob/master/LICENSE)
