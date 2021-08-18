@@ -37,7 +37,7 @@ Credentials for SetOps can be configured.
 steps:
 - uses: setopsco/setup-setops@v1
   with:
-    setops_url: https://
+    setops_client: yourcompany
     setops_username: my-ci-user@setops.co
     setops_password: ${{ secrets.SETOPS_PASSWORD }}
 ```
@@ -51,7 +51,7 @@ The action supports the following inputs:
    for available range specifications). Examples are: `<0.1.5`, `~0.1.4`, `0.1.x` (all three installing
    the latest available 0.1.4 version). If no version is given, it will default to `latest`.
 
-- `setops_url` - (optional) The url of a SetOps service to login to. If not set, no login will be executed.
+- `setops_client` - (optional) The SetOps client name to login to. The client name is the part before .setops.net. If not set, no login will be executed.
 
 - `setops_username` - (optional) The SetOps username for a SetOps service to login in. If not set, no login will be executed.
 

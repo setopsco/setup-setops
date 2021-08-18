@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        setops_versions: ["0.1.4", latest]
+        setops_versions: ["0.6.1", latest]
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -20,16 +20,24 @@ jobs:
       uses: ./
       with:
         setops_version: ${{ matrix['setops_versions'] }}
+        setops_client: dev
+        setops_username: setup-setops-action-ci@zweitag.de
+        setops_password: ${{ secrets.SETOPS_PASSWORD }}
 
     - name: Validate SetOps Version - ${{ matrix['setops_versions'] }}
       if: ${{ matrix['setops_versions'] != 'latest' }}
       run: |
-        setops version show | grep "CLI Version:      ${{ matrix['setops_versions']}}"
+        setops version
+        setops version | grep "CLI Version:      ${{ matrix['setops_versions']}}"
 
     - name: Validate SetOps Version - ${{ matrix['setops_versions'] }}
       if: ${{ matrix['setops_versions'] == 'latest' }}
       run: |
-        setops version show | grep "CLI Version:      "
+        setops version
+        setops version | grep "CLI Version:      "
+
+    - name: setops logout
+      run: setops logout
 
   setops-versions-constraints:
     name: 'SetOps Versions Constraints'
@@ -61,9 +69,12 @@ jobs:
     - name: Setup SetOps
       uses: ./
       with:
-        setops_url: https://dev.setops.net
+        setops_client: dev
         setops_username: setup-setops-action-ci@zweitag.de
         setops_password: ${{ secrets.SETOPS_PASSWORD }}
 
     - name: Validate successful login
-      run: setops stage list | grep "NAME"
+      run: setops project | grep "NAME"
+
+    - name: setops logout
+      run: setops logout
