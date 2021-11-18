@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        setops_versions: ["0.6.1", latest]
+        setops_versions: ["0.9.0", latest]
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -20,9 +20,10 @@ jobs:
       uses: ./
       with:
         setops_version: ${{ matrix['setops_versions'] }}
-        setops_client: dev
+        setops_organization: dev
         setops_username: setup-setops-action-ci@zweitag.de
         setops_password: ${{ secrets.SETOPS_PASSWORD }}
+        setops_api_url: ${{ secrets.SETOPS_API_URL }}
 
     - name: Validate SetOps Version - ${{ matrix['setops_versions'] }}
       if: ${{ matrix['setops_versions'] != 'latest' }}
