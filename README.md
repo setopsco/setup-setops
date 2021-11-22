@@ -19,14 +19,14 @@ The default configuration installs the latest version of SetOps CLI and installs
 
 ```yaml
 steps:
-- uses: setopsco/setup-setops@v1
+- uses: setopsco/setup-setops@v3
 ```
 
 A specific version of SetOps CLI can be installed.
 
 ```yaml
 steps:
-- uses: setopsco/setup-setops@v1
+- uses: setopsco/setup-setops@v3
   with:
     setops_version: 0.1.4
 ```
@@ -35,7 +35,7 @@ Credentials for SetOps can be configured.
 
 ```yaml
 steps:
-- uses: setopsco/setup-setops@v1
+- uses: setopsco/setup-setops@v3
   with:
     setops_organization: yourorganization
     setops_username: my-ci-user@setops.co
