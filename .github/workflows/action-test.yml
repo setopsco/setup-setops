@@ -70,9 +70,9 @@ jobs:
     - name: Setup SetOps
       uses: ./
       with:
-        setops_client: dev
-        setops_username: setup-setops-action-ci@zweitag.de
+        setops_organization: dev
         setops_password: ${{ secrets.SETOPS_PASSWORD }}
+        setops_username: setup-setops-action-ci@zweitag.de
 
     - name: Validate successful login
       run: setops project | grep "NAME"
