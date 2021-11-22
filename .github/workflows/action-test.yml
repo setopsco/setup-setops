@@ -70,6 +70,7 @@ jobs:
     - name: Setup SetOps
       uses: ./
       with:
+        setops_api_url: ${{ secrets.SETOPS_API_URL }}
         setops_organization: dev
         setops_password: ${{ secrets.SETOPS_PASSWORD }}
         setops_username: setup-setops-action-ci@zweitag.de
