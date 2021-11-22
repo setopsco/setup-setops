@@ -6,14 +6,18 @@ inputs:
     description: 'The version of SetOps CLI to install. Instead of a full version string you can also specify a constraint string. Examples are: `<0.1.5`, `~0.1.4`, `0.1.x` (all three installing the latest available 0.1.4 version). Defaults to `latest`.'
     default: 'latest'
     required: false
-  setops_client:
-    description: 'The SetOps client name to login to. The client name is the part before .setops.net. If not set, no login will be executed.'
+  setops_organization:
+    description: 'The SetOps organization to login to. If not set, no login will be executed.'
     required: false
   setops_username:
     description: 'The SetOps username for a SetOps service to login in. If not set, no login will be executed.'
     required: false
   setops_password:
     description: 'The SetOps password for a SetOps service to login in. If not set, no login will be executed.'
+    required: false
+  setops_api_url:
+    description: 'The SetOps API URL to connect to.'
+    default: 'https://api.setops.co'
     required: false
 runs:
   using: 'node12'

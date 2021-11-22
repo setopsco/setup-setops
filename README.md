@@ -19,14 +19,14 @@ The default configuration installs the latest version of SetOps CLI and installs
 
 ```yaml
 steps:
-- uses: setopsco/setup-setops@v1
+- uses: setopsco/setup-setops@v3
 ```
 
 A specific version of SetOps CLI can be installed.
 
 ```yaml
 steps:
-- uses: setopsco/setup-setops@v1
+- uses: setopsco/setup-setops@v3
   with:
     setops_version: 0.1.4
 ```
@@ -35,9 +35,9 @@ Credentials for SetOps can be configured.
 
 ```yaml
 steps:
-- uses: setopsco/setup-setops@v1
+- uses: setopsco/setup-setops@v3
   with:
-    setops_client: yourcompany
+    setops_organization: yourorganization
     setops_username: my-ci-user@setops.co
     setops_password: ${{ secrets.SETOPS_PASSWORD }}
 ```
@@ -51,7 +51,7 @@ The action supports the following inputs:
    for available range specifications). Examples are: `<0.1.5`, `~0.1.4`, `0.1.x` (all three installing
    the latest available 0.1.4 version). If no version is given, it will default to `latest`.
 
-- `setops_client` - (optional) The SetOps client name to login to. The client name is the part before .setops.net. If not set, no login will be executed.
+- `setops_organization` - (optional) The SetOps organization to login to. If not set, no login will be executed.
 
 - `setops_username` - (optional) The SetOps username for a SetOps service to login in. If not set, no login will be executed.
 
