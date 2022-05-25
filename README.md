@@ -1,9 +1,7 @@
 # setup-setops
 
-<p align="left">
-  <a href="https://github.com/setopsco/setup-setops/actions"><img alt="Build Test" src="https://github.com/setopsco/setup-setops/workflows/build-test/badge.svg" /></a>
-  <a href="https://github.com/setopsco/setup-setops/actions"><img alt="Action Test" src="https://github.com/setopsco/setup-setops/workflows/action-test/badge.svg" /></a>
-</p>
+> :warning: **This action is deprecated and therefore read-only.** Please migrate to [setopsco/github-actions/setup](https://github.com/setopsco/github-actions) instead.
+
 
 The `setopsco/setup-setops` action is a JavaScript action that sets up SetOps CLI in your GitHub Actions workflow by downloading a specific version of SetOps CLI and adding it to your `PATH`.
 
